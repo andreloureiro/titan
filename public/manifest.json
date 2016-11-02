@@ -1,0 +1,26 @@
+{
+  "short_name": "Titan",
+  "name": "Titan",
+  "background_color": "#333333",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#333333",
+  "icons": [
+    {
+      "src": "48x48.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "96x96.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "start_url": "index.html?launcher=true"
+}

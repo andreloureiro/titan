@@ -1,0 +1,28 @@
+{
+  "name": "titan",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "cycle-scripts-es-browserify": "0.7.4"
+  },
+  "dependencies": {
+    "@cycle/dom": "^13.0.0",
+    "@cycle/xstream-run": "^3.1.0",
+    "clipboard": "^1.5.15",
+    "http-server": "^0.9.0",
+    "jssha": "^2.2.0",
+    "xstream": "^6.6.0"
+  },
+  "scripts": {
+    "start": "cd build && http-server",
+    "dev": "cycle-scripts start",
+    "test": "cycle-scripts test",
+    "build": "cycle-scripts build",
+    "take-off-training-wheels": "cycle-scripts take-off-training-wheels"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  }
+}

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="manifest" href="/manifest.json">
+  <style media="screen">
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    background-color: #111;
+    color: #EFEFEF;
+    font-family: monospace;
+  }
+  .notification {
+    display: block;
+    height: 0;
+    padding: 0;
+    color: #222;
+    text-align: center;
+    background: #FAFAFA;
+    box-sizing: border-box;
+    transition: 250ms all ease-out;
+  }
+  .notification.show {
+    height: 31px;
+    padding: 8px 0;
+    transition: 250ms all ease-out;
+  }
+  #app {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  input {
+    margin-bottom: 10px;
+    padding: 5px 6px;
+    font-size: 18px;
+    font-family: monospace;
+    color: #EFEFEF;
+    text-align: center;
+    letter-spacing: 1.2px;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #EFEFEF;
+    outline: none;
+  }
+  button {
+    padding: 8px 12px;
+    background: #111;
+    font-size: 12px;
+    letter-spacing: 1.2px;
+    color: #EFEFEF;
+    border: none;
+    border: 1px solid #EFEFEF;
+  }
+  button:active {
+    color: #111;
+    background: #EFEFEF;
+  }
+  .display-password {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60px;
+    max-width: 300px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 10px;
+    color: #333;
+    background: #EFEFEF;
+    font-size: 20px;
+    letter-spacing: 1.2px;
+    border: 1px solid #FAFAFA;
+    box-sizing: border-box;
+  }
+  .display-password pre {
+    width: 100%;
+    margin: 0;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+  }
+  </style>
+  <title>Titan</title>
+</head>
+<body>
+  <div id="app"></div>
+  <script src="bundle.js"></script>
+  <script type="text/javascript">
+    navigator.serviceWorker.register('sw.js', {scope: '.'});
+    navigator.serviceWorker.addEventListener('controllerchange', function(event) {
+    navigator.serviceWorker.controller.addEventListener('statechange', function() {
+      if (this.state === 'activated') {
+        if (Notification.permission === 'granted') {
+          var notification = new Notification('Titan is available for offline usage');
+        } else  {
+          Notification.requestPermission(function(permission) {
+            if (permission === 'granted') {
+              var notification = new Notification('Titan is available for offline usage');
+            }
+          })
+        }
+      }
+    })
+  })
+  </script>
+</body>
+</html>

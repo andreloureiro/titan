@@ -1,0 +1,51 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #333;
+  color: #FAFAFA;
+  font-family: monospace;
+}
+#app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 300px;
+  margin: 0 auto;
+  text-align: center;
+}
+input {
+  margin-bottom: 10px;
+  padding: 5px 6px;
+  font-size: 18px;
+  font-family: monospace;
+  color: #FAFAFA;
+  text-align: center;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #FAFAFA;
+  outline: none;
+}
+.display-password {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80px;
+  max-width: 300px;
+  margin-top: 20px;
+  padding: 10px;
+  color: #FAFAFA;
+  font-size: 20px;
+  letter-spacing: 1.2px;
+  border: 1px solid #FAFAFA;
+  box-sizing: border-box;
+}
+.display-password pre {
+  width: 100%;
+  margin: 0;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
